@@ -1,0 +1,83 @@
+$ ~/Dapps/aptos/counter % aptos move publish
+Compiling, may take a little while to download git dependencies...
+INCLUDING DEPENDENCY AptosFramework
+INCLUDING DEPENDENCY AptosStdlib
+INCLUDING DEPENDENCY MoveStdlib
+BUILDING global_counter
+package size 1568 bytes
+Do you want to submit a transaction for a range of [685200 - 1027800] Octas at a gas unit price of 100 Octas? [yes/no] >
+yes
+{
+  "Result": {
+    "transaction_hash": "0x813e34800f0c67c81e97083f72b842c50b4e3e5e0b6037b05f5b53033c688c48",
+    "gas_used": 6852,
+    "gas_unit_price": 100,
+    "sender": "a2a6fd19530ac426d78799847e01887f532ee98162515c471ca24642cae11cdf",
+    "sequence_number": 0,
+    "success": true,
+    "timestamp_us": 1668433943304477,
+    "version": 12740397,
+    "vm_status": "Executed successfully"
+  }
+}
+
+$ ~/Dapps/aptos/counter % aptos move run --function-id 0xa2a6fd19530ac426d78799847e01887f532ee98162515c471ca24642cae11cdf::counter::initialize
+
+Do you want to submit a transaction for a range of [69900 - 104800] Octas at a gas unit price of 100 Octas? [yes/no] >
+yes
+{
+  "Result": {
+    "transaction_hash": "0xc11fefdf13a76d1746772fb700ccca3db109fd22f18c4756c0803a20bc4101d8",
+    "gas_used": 699,
+    "gas_unit_price": 100,
+    "sender": "a2a6fd19530ac426d78799847e01887f532ee98162515c471ca24642cae11cdf",
+    "sequence_number": 1,
+    "success": true,
+    "timestamp_us": 1668434132697922,
+    "version": 12742681,
+    "vm_status": "Executed successfully"
+  }
+}
+
+$ ~/Dapps/aptos/counter % aptos account list
+{
+    "Result": [
+        ...
+        {
+            "0xa2a6fd19530ac426d78799847e01887f532ee98162515c471ca24642cae11cdf::counter::Counter": {
+              "counter": "0"
+            }
+        },
+        ...
+        ]
+}
+
+$ ~/Dapps/aptos/counter % aptos move run --function-id 0xa2a6fd19530ac426d78799847e01887f532ee98162515c471ca24642cae11cdf::counter::increment --private-key 0x1ab035xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx0d71345fc6463
+Do you want to submit a transaction for a range of [22400 - 33600] Octas at a gas unit price of 100 Octas? [yes/no] >
+yes
+{
+  "Result": {
+    "transaction_hash": "0xdf58d293f5b1df02b8e7d73f03b29f6536e187e94fb6b12f54c8e2bbc6df2e96",
+    "gas_used": 224,
+    "gas_unit_price": 100,
+    "sender": "098e1724e07c2db58bc7ce75df079d2e20daf5b7e8af852c9ec88197ec809ba0",
+    "sequence_number": 0,
+    "success": true,
+    "timestamp_us": 1668435102007677,
+    "version": 12753038,
+    "vm_status": "Executed successfully"
+  }
+}
+
+$ ~/Dapps/aptos/counter % aptos account list
+{
+    "Result": [
+        ...
+        {
+            "0xa2a6fd19530ac426d78799847e01887f532ee98162515c471ca24642cae11cdf::counter::Counter": {
+              "counter": "1"
+            }
+        },
+        ...
+        ]
+}
