@@ -1,5 +1,5 @@
 [package]
-name = 'multisig'
+name = 'global_counter'
 version = '1.0.0'
 [dependencies.AptosFramework]
 git = 'https://github.com/aptos-labs/aptos-core.git'
