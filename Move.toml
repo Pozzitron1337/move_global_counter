@@ -1,0 +1,10 @@
+[package]
+name = 'multisig'
+version = '1.0.0'
+[dependencies.AptosFramework]
+git = 'https://github.com/aptos-labs/aptos-core.git'
+rev = 'main'
+subdir = 'aptos-move/framework/aptos-framework'
+
+[addresses]
+CounterAccount="a2a6fd19530ac426d78799847e01887f532ee98162515c471ca24642cae11cdf"
